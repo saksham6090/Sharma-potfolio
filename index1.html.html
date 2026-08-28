@@ -1,0 +1,1149 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saksham Sharma | AI/ML Engineer</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #050816;
+            color: white;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: #00d9ff;
+            filter: blur(180px);
+            opacity: 0.10;
+            top: -150px;
+            left: -150px;
+            z-index: -1;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: #7c3aed;
+            filter: blur(180px);
+            opacity: 0.10;
+            bottom: -150px;
+            right: -150px;
+            z-index: -1;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 18px 7%;
+            background: rgba(5, 8, 22, 0.90);
+            backdrop-filter: blur(15px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #202943;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #00d9ff;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 22px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #00d9ff;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 20px 60px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .profile-photo-wrap {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 28px;
+            padding: 4px;
+            border: 2px solid #00d9ff;
+            border-radius: 50%;
+            box-shadow: 0 0 35px rgba(0, 217, 255, 0.20);
+            overflow: hidden;
+        }
+
+        .profile-photo {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 50%;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 18px;
+            border: 1px solid #00d9ff;
+            border-radius: 30px;
+            color: #00d9ff;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        .hero h1 {
+            font-size: 62px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #00d9ff;
+        }
+
+        .hero h2 {
+            font-size: 29px;
+            color: #b8c1d9;
+            margin-bottom: 20px;
+        }
+
+        #typing {
+            color: #00d9ff;
+        }
+
+        .hero p {
+            color: #aeb7cc;
+            font-size: 18px;
+            max-width: 720px;
+            margin: auto;
+        }
+
+        /* ================= BUTTONS ================= */
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 28px;
+            margin: 7px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #00d9ff;
+            color: #04101b;
+        }
+
+        .secondary {
+            border: 1px solid #00d9ff;
+            color: #00d9ff;
+        }
+
+        .cv-download {
+            background: #121932;
+            border: 1px solid #00d9ff;
+            color: #00d9ff;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.20);
+        }
+
+        .cv-download:hover {
+            background: #00d9ff;
+            color: #04101b;
+        }
+
+        /* ================= SECTIONS ================= */
+
+        section {
+            padding: 100px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #00d9ff;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about p {
+            color: #b8c1d9;
+            font-size: 18px;
+        }
+
+        /* ================= STATS ================= */
+
+        .stats {
+            max-width: 900px;
+            margin: 45px auto 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .stat {
+            background: #121932;
+            border: 1px solid #26304d;
+            border-radius: 18px;
+            padding: 25px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .stat:hover {
+            transform: translateY(-7px);
+            border-color: #00d9ff;
+            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.10);
+        }
+
+        .stat h3 {
+            color: #b8c1d9;
+            font-size: 17px;
+        }
+
+        .number {
+            color: #00d9ff;
+            font-size: 38px;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+
+        .stat p {
+            color: #8f9ab3;
+        }
+
+        /* ================= SKILLS ================= */
+
+        .skills {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .skill {
+            background: #121932;
+            border: 1px solid #26304d;
+            border-radius: 18px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-7px) scale(1.02);
+            border-color: #00d9ff;
+            box-shadow: 0 10px 35px rgba(0, 217, 255, 0.10);
+        }
+
+        .skill-icon {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .skill h3 {
+            color: #00d9ff;
+            margin-bottom: 8px;
+        }
+
+        .skill p {
+            color: #9ea9c1;
+            font-size: 14px;
+        }
+
+        /* ================= PROJECTS ================= */
+
+        .projects {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .project {
+            background: #121932;
+            border: 1px solid #26304d;
+            padding: 30px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-7px);
+            border-color: #00d9ff;
+            box-shadow: 0 10px 35px rgba(0, 217, 255, 0.10);
+        }
+
+        .project h3 {
+            color: #00d9ff;
+            margin-bottom: 12px;
+        }
+
+        .project p {
+            color: #aeb7cc;
+        }
+
+        .tag {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 5px 12px;
+            background: #202a47;
+            border-radius: 20px;
+            font-size: 13px;
+            color: #cbd4e7;
+        }
+
+        /* ================= CERTIFICATES ================= */
+
+        .certificate-buttons {
+            margin-top: 20px;
+        }
+
+        /* ================= GOAL ================= */
+
+        .goal {
+            max-width: 900px;
+            margin: auto;
+            padding: 45px;
+            background: #121932;
+            border: 1px solid #26304d;
+            border-radius: 22px;
+            text-align: center;
+        }
+
+        .goal h3 {
+            color: #00d9ff;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .goal p {
+            color: #b8c1d9;
+            font-size: 17px;
+        }
+
+        /* ================= EDUCATION ================= */
+
+        .education {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .edu-card {
+            background: #121932;
+            border-left: 4px solid #00d9ff;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+
+        .edu-card h3 {
+            color: #00d9ff;
+            margin-bottom: 10px;
+        }
+
+        .edu-card p {
+            color: #aeb7cc;
+            margin-bottom: 5px;
+        }
+
+        /* ================= CV ================= */
+
+        .cv-container {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .cv-card {
+            background: #121932;
+            border: 1px solid #26304d;
+            border-radius: 22px;
+            padding: 45px;
+            transition: 0.3s;
+        }
+
+        .cv-card:hover {
+            border-color: #00d9ff;
+            box-shadow: 0 10px 35px rgba(0, 217, 255, 0.10);
+            transform: translateY(-5px);
+        }
+
+        .cv-icon {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .cv-card h3 {
+            color: #00d9ff;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .cv-card p {
+            color: #b8c1d9;
+            font-size: 17px;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            color: #aeb7cc;
+            margin-bottom: 25px;
+        }
+
+        .email {
+            color: #00d9ff;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        /* ================= SOCIAL LINKS ================= */
+
+        .social-links {
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 7px;
+            padding: 10px 20px;
+            border: 1px solid #26304d;
+            border-radius: 25px;
+            color: #b8c1d9;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #00d9ff;
+            border-color: #00d9ff;
+            transform: translateY(-3px);
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #03050e;
+            color: #7f899f;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 110px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero h2 {
+                font-size: 22px;
+            }
+
+            .profile-photo-wrap {
+                width: 150px;
+                height: 150px;
+            }
+
+            section {
+                padding: 75px 5%;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .goal {
+                padding: 30px 20px;
+            }
+
+            .cv-card {
+                padding: 30px 20px;
+            }
+
+            .cv-card h3 {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav>
+        <div class="logo">
+            Saksham<span>.</span>
+        </div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certificates">Certificates</a></li>
+            <li><a href="#goal">Goal</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#cv">CV</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="profile-photo-wrap">
+                <img src="sphoto.jpeg" alt="Saksham Sharma" class="profile-photo">
+            </div>
+
+            <div class="badge">
+                🚀 Future AI/ML Engineer
+            </div>
+
+            <h1>
+                Hi, I'm
+                <span>Saksham Sharma</span>
+            </h1>
+
+            <h2>
+                <span id="typing"></span>
+            </h2>
+
+            <p>
+                Computer Science student passionate about programming,
+                Artificial Intelligence, Machine Learning and building
+                innovative technology solutions.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#projects" class="btn primary">
+                    Explore My Work
+                </a>
+
+                <a href="#contact" class="btn secondary">
+                    Contact Me
+                </a>
+
+                <a href="c:\Users\saksh\Downloads\Saksham_Sharma_CV_Final.pdf" class="btn cv-download" download>
+                    📄 Download CV
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about">
+
+        <h2 class="section-title">
+            About <span>Me</span>
+        </h2>
+
+        <div class="about">
+
+            <p>
+                I'm Saksham Sharma, a Computer Science student and aspiring
+                AI/ML Engineer. I have learned Python, C, JavaScript, HTML,
+                CSS, and DBMS. I'm passionate about Artificial Intelligence,
+                programming and problem-solving. My goal is to develop
+                intelligent real-world solutions and continuously improve
+                my technical skills.
+            </p>
+
+        </div>
+
+        <div class="stats">
+
+            <div class="stat">
+                <h3>Current CGPA</h3>
+                <div class="number">7.02</div>
+                <p>CGPA</p>
+            </div>
+
+            <div class="stat">
+                <h3>Class 12</h3>
+                <div class="number">70%</div>
+                <p>Percentage</p>
+            </div>
+
+            <div class="stat">
+                <h3>Class 10</h3>
+                <div class="number">84%</div>
+                <p>Percentage</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= SKILLS ================= -->
+
+    <section id="skills">
+
+        <h2 class="section-title">
+            Technical <span>Skills</span>
+        </h2>
+
+        <div class="skills">
+
+            <div class="skill">
+                <div class="skill-icon">🐍</div>
+                <h3>Python</h3>
+                <p>Programming & problem solving</p>
+            </div>
+
+            <div class="skill">
+                <div class="skill-icon">⚙️</div>
+                <h3>C</h3>
+                <p>Programming fundamentals</p>
+            </div>
+
+            <div class="skill">
+                <div class="skill-icon">💻</div>
+                <h3>JavaScript</h3>
+                <p>Programming and web development</p>
+            </div>
+
+            <div class="skill">
+                <div class="skill-icon">🌐</div>
+                <h3>HTML</h3>
+                <p>Web development</p>
+            </div>
+
+            <div class="skill">
+                <div class="skill-icon">🎨</div>
+                <h3>CSS</h3>
+                <p>Web design & styling</p>
+            </div>
+
+            <div class="skill">
+                <div class="skill-icon">🗄️</div>
+                <h3>DBMS</h3>
+                <p>Database fundamentals</p>
+            </div>
+
+            <div class="skill">
+                <div class="skill-icon">🤖</div>
+                <h3>AI / ML</h3>
+                <p>Currently learning</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= PROJECTS ================= -->
+
+    <section id="projects">
+
+        <h2 class="section-title">
+            My <span>Projects</span>
+        </h2>
+
+        <div class="projects">
+
+            <div class="project">
+
+                <h3>
+                    🌡️ Environment Management System
+                </h3>
+
+                <p>
+                    Created an environment management system that detects
+                    the number of people entering a room and provides
+                    information about the room's heat and temperature.
+                    The system helps monitor room conditions and understand
+                    how occupancy can relate to the indoor environment.
+                </p>
+
+                <span class="tag">
+                    Environment • Monitoring
+                </span>
+
+            </div>
+
+            <div class="project">
+
+                <h3>
+                    🐍 Python Tutoring
+                </h3>
+
+                <p>
+                    Completed a CDP (Continuous Development Program) focused
+                    on Python tutoring, strengthening Python programming
+                    knowledge and communication skills through teaching.
+                </p>
+
+                <span class="tag">
+                    Python • Tutoring
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= CERTIFICATES ================= -->
+
+    <section id="certificates">
+
+        <h2 class="section-title">
+            My <span>Certificates</span>
+        </h2>
+
+        <div class="projects">
+
+            <div class="project">
+
+                <h3>🐍 Python</h3>
+
+                <p>
+                    Certificate in Python programming.
+                </p>
+
+                <div class="certificate-buttons">
+
+                    <a href="python 1.pdf" class="btn secondary" target="_blank" rel="noopener">
+                        👁️ View Certificate
+                    </a>
+
+                    <a href="python 1.pdf" class="btn cv-download" download>
+                        ⬇️ Download Certificate
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="project">
+
+                <h3>⚙️ C</h3>
+
+                <p>
+                    Certificate in C programming.
+                </p>
+
+                <div class="certificate-buttons">
+
+                    <a href="c.png" class="btn secondary" target="_blank" rel="noopener">
+                        👁️ View Certificate
+                    </a>
+
+                    <a href="c.png" class="btn cv-download" download>
+                        ⬇️ Download Certificate
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="project">
+
+                <h3>🗄️ DBMS</h3>
+
+                <p>
+                    Certificate in Database Management Systems.
+                </p>
+
+                <div class="certificate-buttons">
+
+                    <a href="dbms.png" class="btn secondary" target="_blank" rel="noopener">
+                        👁️ View Certificate
+                    </a>
+
+                    <a href="dbms.png" class="btn cv-download" download>
+                        ⬇️ Download Certificate
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="project">
+
+                <h3>🌱 Building Positive Attitude</h3>
+
+                <p>
+                    Certificate in Building Positive Attitude.
+                </p>
+
+                <div class="certificate-buttons">
+
+                    <a href="positive attitude.pdf" class="btn secondary" target="_blank" rel="noopener">
+                        👁️ View Certificate
+                    </a>
+
+                    <a href="positive attitude.pdf" class="btn cv-download" download>
+                        ⬇️ Download Certificate
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= CAREER GOAL ================= -->
+
+    <section id="goal">
+
+        <h2 class="section-title">
+            Career <span>Goal</span>
+        </h2>
+
+        <div class="goal">
+
+            <h3>
+                🤖 Become an AI/ML Engineer
+            </h3>
+
+            <p>
+                My goal is to become a skilled Artificial Intelligence
+                and Machine Learning Engineer. I want to build strong
+                foundations in Python, mathematics, statistics, data
+                structures, machine learning and deep learning. I aim
+                to create intelligent applications that solve real-world
+                problems and make a meaningful impact through technology.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ================= EDUCATION ================= -->
+
+    <section id="education">
+
+        <h2 class="section-title">
+            <span>Education</span>
+        </h2>
+
+        <div class="education">
+
+            <div class="edu-card">
+
+                <h3>
+                    Bachelor of Technology - Computer Science and Engineering
+                </h3>
+
+                <p>
+                    Lovely Professional University, Phagwara, Punjab
+                </p>
+
+                <p>
+                    Currently pursuing B.Tech in Computer Science and Engineering.
+                </p>
+
+                <br>
+
+                <p>
+                    <strong>Current CGPA:</strong> 7.02
+                </p>
+
+            </div>
+
+            <div class="edu-card">
+
+                <h3>
+                    Higher Secondary Education
+                </h3>
+
+                <p>
+                    Army Public School Jalandhar Cantt
+                </p>
+
+                <p>
+                    Percentage: 70%
+                </p>
+
+            </div>
+
+            <div class="edu-card">
+
+                <h3>
+                    Secondary Education
+                </h3>
+
+                <p>
+                    Army Public School Jalandhar Cantt
+                </p>
+
+                <p>
+                    Percentage: 84%
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= CV ================= -->
+
+    <section id="cv">
+
+        <h2 class="section-title">
+            My <span>CV</span>
+        </h2>
+
+        <div class="cv-container">
+
+            <div class="cv-card">
+
+                <div class="cv-icon">
+                    📄
+                </div>
+
+                <h3>
+                    Saksham Sharma — Resume
+                </h3>
+
+                <p>
+                    View or download my latest CV containing my education,
+                    technical skills, projects, certifications and achievements.
+                </p>
+
+                <div class="buttons">
+
+                    <a href="Saksham_Sharma_CV_Final.pdf" class="btn primary" target="_blank" rel="noopener">
+                        👁️ View CV
+                    </a>
+
+                    <a href="Saksham_Sharma_CV_Final.pdf" class="btn cv-download" download>
+                        ⬇️ Download CV
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact">
+
+        <h2 class="section-title">
+            Get In <span>Touch</span>
+        </h2>
+
+        <div class="contact">
+
+            <p>
+                Interested in connecting with me for projects,
+                collaboration or opportunities?
+            </p>
+
+            <a class="email" href="mailto:102008Saksham@gmail.com">
+                📧 102008Saksham@gmail.com
+            </a>
+
+            <br>
+            <br>
+
+            <a class="btn primary" href="mailto:102008Saksham@gmail.com">
+                Send Me an Email
+            </a>
+
+            <div class="social-links">
+
+                <a href="https://www.linkedin.com/in/sakshama-sharma-285679397" target="_blank" rel="noopener">
+                    LinkedIn
+                </a>
+
+                <a href="https://github.com/saksham6090" target="_blank" rel="noopener">
+                    GitHub
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+        <p>
+            © 2026 Saksham Sharma | Aspiring AI/ML Engineer
+        </p>
+    </footer>
+
+    <!-- ================= TYPING ANIMATION ================= -->
+
+    <script>
+
+        const texts = [
+            "Aspiring AI/ML Engineer 🤖",
+            "Python Developer 🐍",
+            "Computer Science Student 💻",
+            "Future Machine Learning Engineer 🚀"
+        ];
+
+        let textIndex = 0;
+        let charIndex = 0;
+        let deleting = false;
+
+        function typeEffect() {
+
+            const typing = document.getElementById("typing");
+            const currentText = texts[textIndex];
+
+            if (!deleting) {
+
+                typing.textContent =
+                    currentText.substring(
+                        0,
+                        charIndex + 1
+                    );
+
+                charIndex++;
+
+                if (charIndex === currentText.length) {
+
+                    deleting = true;
+
+                    setTimeout(
+                        typeEffect,
+                        1500
+                    );
+
+                    return;
+                }
+
+            } else {
+
+                typing.textContent =
+                    currentText.substring(
+                        0,
+                        charIndex - 1
+                    );
+
+                charIndex--;
+
+                if (charIndex === 0) {
+
+                    deleting = false;
+                    textIndex++;
+
+                    if (textIndex === texts.length) {
+                        textIndex = 0;
+                    }
+                }
+            }
+
+            setTimeout(
+                typeEffect,
+                deleting ? 50 : 100
+            );
+        }
+
+        typeEffect();
+
+    </script>
+
+</body>
+
+</html>
+```
